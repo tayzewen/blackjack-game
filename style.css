@@ -1,23 +1,26 @@
 body {
-    background: darkgreen;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(table.jpeg) no-repeat;
     text-align: center;
     font-family: 'Trebuchet MS';
     color: white;
-  }
+}
   
-  h1 {
+h1 {
+    padding: 25px 0;
     color: goldenrod;
-  }
+    font-size: 40px;
+}
   
-  p {
+p {
     font-weight: bold;
-  }
+    font-size: 20px;
+}
   
-  #message-el {
+#message-el {
     font-style: italic;
-  }
+}
   
-  button {
+button {
     color: #016f32;
     width: 150px;
     background-color: goldenrod;
@@ -27,4 +30,22 @@ body {
     border-radius: 1vh;
     padding: 5px 0;
     margin-bottom: 5px;
-   }
+}
+
+#name {
+    margin-top: 15px;
+}
+
+#cards-el, #sum-el {
+    font-size: 24px;
+}
+
+#player-el {
+    margin: 35px 0 0 0;
+    font-size: 24px;
+}
+
+#chips-el {
+    margin: 5px 0;
+    font-size: 24px;
+}

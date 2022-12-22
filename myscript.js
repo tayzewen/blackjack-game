@@ -7,7 +7,8 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
-let playerChips = 100
+let chipsEl = document.getElementById("chips-el")
+let playerChips = 0
 
 let player = {
 	name: getName(),
@@ -27,6 +28,7 @@ function getRandomCard() {
 
 function startGame() {
     isAlive = true
+    hasBlackjack = false
 	let firstCard = getRandomCard()
 	let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
@@ -37,19 +39,25 @@ function startGame() {
 function renderGame() {
 	cardsEl.textContent = "Cards: " 
     for (let i = 0; i < cards.length; i++) {
-		cardsEl.textContent += cards[i] + " "
+		cardsEl.textContent += cards[i] + " - "
 	}
-	sumEl.textContent = "Sum: " + sum 
+	sumEl.textContent = "Total: " + sum 
     if (sum <= 20) {
-        message = "Do you want to draw a new card?"
+        message = "Draw a New Card?"
     } else if (sum === 21) {
-        message = "WOOHOO, Blackjack!"
+        message = "You've got Blackjack!"
         hasBlackjack = true
     } else {
-        message = "Sorry :( you busted"
+        message = "Sorry, you busted."
         isAlive = false
     }
     messageEl.textContent = message
+
+    if (hasBlackjack === true) {
+        playerChips = playerChips + 25
+        chipsEl.textContent = "$" + playerChips
+    }
+
 }
 
 function newCard() {
@@ -60,6 +68,7 @@ function newCard() {
         console.log(cards)
         renderGame()
 	}
+
 }
 
 function getName() {
@@ -68,14 +77,11 @@ function getName() {
 	return firstName
 }
 
-function betChips() {
-    playerChips = playerChips - 5
-    console.log(playerChips)
-    return playerChips
-}
 
 function displayChips() {
-    playerEl.textContent = getName() + ": $" + playerChips
+    playerEl.textContent = getName()
+    chipsEl.textContent = "$" + playerChips
+
 }
 
 
