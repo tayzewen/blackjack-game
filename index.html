@@ -10,15 +10,27 @@
 <body>
     <h1>Blackjack</h1>
     <p id="message-el">Want to play a round?</p>
-    <p id="cards-el">Cards:</p>
-    <p id="sum-el">Total: </p>
-    <button id="start-btn" onclick="startGame()">START</button>
-    <button id="new-card" onclick="newCard()">NEW CARD</button>
+    
+    <div id="game-content">
+        <!-- <div id="dealer">
+            <p id="dealer-cards">Dealer's Cards: ? + </p>
+            <p id="dealer-total">Total:</p>
+
+        </div> -->
+        <div id="user-cards">
+            <p id="cards-el">Your Cards:</p>
+            <p id="sum-el">Total: </p>
+        </div>
+        <button id="start-btn" onclick="startGame()">DEAL</button>
+        <button id="new-card" onclick="newCard()">HIT</button>
+        <!-- <button id="stand-btn" onclick="stand()">STAND</button> -->
+    </div>
     <p id="player-el">
-    Enter name:<br><input type="text" id="name" name="name"><br>
-    <button id="name" onclick="displayChips()">ENTER</button>
+        Enter name:<br><input type="text" id="name" name="name"><br>
+        <button id="name" onclick="displayChips()">PLAY</button>
     </p>
     <p id="chips-el"></p>
+
 
     <script src="myscript.js"></script>
 </body>

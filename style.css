@@ -1,5 +1,6 @@
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(table.jpeg) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(table.jpg) no-repeat;
+    background-size: cover;
     text-align: center;
     font-family: 'Trebuchet MS';
     color: white;
@@ -32,11 +33,19 @@ button {
     margin-bottom: 5px;
 }
 
+button:active {
+    background: goldenrod;
+    /* transform: scale(0.98); */
+    box-shadow: inset 0 0 5px black;
+    -webkit-box-shadow: inset 0 0 5px black;
+    -moz-box-shadow: inset 0 0 5px black;
+}
+
 #name {
     margin-top: 15px;
 }
 
-#cards-el, #sum-el {
+#cards-el, #sum-el, #dealer-cards, #dealer-total  {
     font-size: 24px;
 }
 
